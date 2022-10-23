@@ -1,13 +1,13 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   border: 0;
-}
+} */
 ul li {
   list-style: none;
 }
 :root {
-  --auth-text-link-color: #757575;
+  --dominant-text-color: #757575;
   --logo-text-studio-color: #000000;
   --logo-text-web-hoover-color: #2196f3;
   --nav-text-link-color: #212121;
@@ -19,8 +19,10 @@ ul li {
 }
 body {
   font-family: Roboto, sans-serif;
+  background: var(--headline-text-color);
+  color: var(--dominant-text-color);
 }
-header {
+.header {
   background: var(--headline-text-color);
   width: 1600px;
   height: 80px;
@@ -51,13 +53,12 @@ header {
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
-  cursor: pointer;
 }
 .nav-link:active,
-.auth-link:hover {
+.nav-link:focus {
   color: var(--logo-text-web-hoover-color);
 }
-.nav-link:focus,
+.auth-link:hover,
 .auth-link:focus {
   color: var(--logo-text-web-hoover-color);
 }
@@ -65,7 +66,7 @@ header {
   color: var(--nav-text-link-color);
 }
 .auth-link {
-  color: var(--auth-text-link-color);
+  color: var(--dominant-text-color);
 }
 
 /* ГЕРОЙ */
@@ -84,7 +85,7 @@ header {
   color: var(--headline-text-color);
   font-weight: 900;
   font-size: 44px;
-  line-height: 1, 36;
+  line-height: calc(60 / 44);
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -94,7 +95,7 @@ header {
   left: 452px;
   top: 280px;
 }
-.button {
+.main-button {
   /* текст */
   font-family: inherit;
   font-weight: 700;
@@ -141,11 +142,9 @@ header {
   color: var(--nav-text-link-color);
 }
 .text {
-  font-weight: 400;
   font-size: 14px;
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
-  color: var(--auth-text-link-color);
 }
 
 /* НАША КОМАНДА */
@@ -182,8 +181,9 @@ header {
   height: 368px;
   text-align: center;
 }
+/* ФУТЕР */
 .footer {
-  position: absolute;
+  /* position: absolute; */
   width: 1600px;
   height: 252px;
   left: 0px;
@@ -194,12 +194,12 @@ header {
   color: var(--headline-text-color);
   text-decoration: none;
 }
-
 .adress-footer-link,
 .footer-link {
   color: var(--headline-text-color);
   font-weight: 400;
   font-size: 14px;
+  font-style: normal;
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   text-decoration: none;
@@ -214,4 +214,44 @@ header {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--logo-text-web-hoover-color);
+}
+/* ............ПОРТФОЛІО................................. */
+.filter-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(26 / 16);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--nav-text-link-color);
+  cursor: pointer;
+  background: var(--background-color-team);
+  border-radius: 4px;
+}
+.filter-button:active,
+.filter-button:focus {
+  color: var(--headline-text-color);
+  background: var(--logo-text-web-hoover-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+.portfolio-list {
+  background: var(--headline-text-color);
+  width: 370px;
+  height: 404px;
+  text-decoration: none;
+}
+.portfolio-list-item {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(36 / 18);
+  letter-spacing: 0.06em;
+  color: var(--nav-text-link-color);
+}
+.portfolio-list-desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.03em;
+  color: var(--dominant-text-color);
 }
