@@ -6,6 +6,19 @@
 ul li {
   list-style: none;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 :root {
   --dominant-text-color: #757575;
   --logo-text-studio-color: #000000;
@@ -19,15 +32,13 @@ ul li {
 }
 body {
   font-family: Roboto, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
   background: var(--headline-text-color);
   color: var(--dominant-text-color);
 }
 .header {
   background: var(--headline-text-color);
-  width: 1600px;
-  height: 80px;
-  left: 0px;
-  top: 0px;
 }
 /* ЛОГОТИП */
 .header-logo {
@@ -46,6 +57,7 @@ body {
   text-decoration: none;
 }
 /* НАВІГАЦІЯ */
+
 .nav-link,
 .auth-link {
   text-decoration: none;
@@ -54,7 +66,12 @@ body {
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
 }
-.nav-link:active,
+.nav-link:hover {
+  color: var(--logo-text-web-hoover-color);
+}
+.nav-link.current {
+  color: var(--logo-text-web-hoover-color);
+}
 .nav-link:focus {
   color: var(--logo-text-web-hoover-color);
 }
@@ -71,15 +88,9 @@ body {
 
 /* ГЕРОЙ */
 .hero {
-  box-sizing: border-box;
   background-color: var(--background-color-footer);
-  width: 1600px;
-  height: 600px;
-  left: 0px;
-  top: 80px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* width: 1600px;
+  height: 600px; */
 }
 .headline {
   color: var(--headline-text-color);
@@ -89,11 +100,6 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  position: absolute;
-  width: 696px;
-  height: 120px;
-  left: 452px;
-  top: 280px;
 }
 .main-button {
   /* текст */
@@ -101,11 +107,6 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: calc(30 / 16);
-  position: absolute;
-  width: 152px;
-  height: 30px;
-  left: 724px;
-  top: 440px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -117,22 +118,12 @@ body {
   background: var(--logo-text-web-hoover-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  position: absolute;
-  width: 216px;
-  height: 50px;
-  left: 692px;
-  top: 430px;
 }
 .button:active {
   background: var(--button-bcg-color);
 }
 /* ОСОБЛИВОСТІ */
-.features {
-  background-color: var(--main-background-color);
-}
-.title-transparent {
-  color: transparent;
-}
+
 .subtitle {
   font-weight: 700;
   font-size: 14px;
@@ -142,19 +133,14 @@ body {
   color: var(--nav-text-link-color);
 }
 .text {
+  font-weight: 400;
   font-size: 14px;
   line-height: calc(24 / 14);
-  letter-spacing: 0.03em;
 }
 
 /* НАША КОМАНДА */
 .team {
   background: var(--background-color-team);
-  position: absolute;
-  width: 1600px;
-  height: 648px;
-  left: 0px;
-  top: 1446px;
 }
 .title {
   font-weight: 700;
@@ -171,7 +157,13 @@ body {
   letter-spacing: 0.03em;
   color: var(--nav-text-link-color);
 }
-
+.card-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
 .card {
   background: var(--headline-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -183,11 +175,6 @@ body {
 }
 /* ФУТЕР */
 .footer {
-  /* position: absolute; */
-  width: 1600px;
-  height: 252px;
-  left: 0px;
-  top: 2094px;
   background: var(--background-color-footer);
 }
 .footer-logo {
@@ -217,6 +204,7 @@ body {
 }
 /* ............ПОРТФОЛІО................................. */
 .filter-button {
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: calc(26 / 16);
@@ -228,6 +216,7 @@ body {
   border-radius: 4px;
 }
 .filter-button:active,
+.filter-button:hover,
 .filter-button:focus {
   color: var(--headline-text-color);
   background: var(--logo-text-web-hoover-color);
@@ -249,7 +238,6 @@ body {
   color: var(--nav-text-link-color);
 }
 .portfolio-list-desc {
-  font-weight: 400;
   font-size: 16px;
   line-height: calc(30 / 16);
   letter-spacing: 0.03em;
